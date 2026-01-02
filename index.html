@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Shortcuts - Hướng Dẫn Phím Tắt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .section-note {
+            background: #f0f4ff;
+            padding: 12px 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f9ff;
+            color: #667eea;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:hover {
+            background: #f8f9ff;
+        }
+
+        .key {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin: 2px;
+        }
+
+        .top-shortcuts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .top-shortcut-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .top-shortcut-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .rank {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .tips-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-box li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .tips-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Visual Studio Keyboard Shortcuts</h1>
+            <p>Tăng tốc code gấp 10 lần với phím tắt</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm phím tắt... (ví dụ: format, debug, tab)">
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🏆</span>
+                <h2 class="section-title">TOP 10 PHÍM TẮT PHẢI THUỘC</h2>
+            </div>
+            <div class="top-shortcuts">
+                <div class="top-shortcut-card">
+                    <span class="rank">1</span>
+                    <span class="key">Ctrl + ,</span>
+                    <p>Tìm mọi thứ</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">2</span>
+                    <span class="key">Ctrl + .</span>
+                    <p>Fix nhanh</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">3</span>
+                    <span class="key">F12</span> / <span class="key">Alt + F12</span>
+                    <p>Nhảy definition</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">4</span>
+                    <span class="key">Ctrl + Tab</span>
+                    <p>Đổi tab</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">5</span>
+                    <span class="key">Ctrl + Shift + F</span>
+                    <p>Search toàn project</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">6</span>
+                    <span class="key">Ctrl + R, R</span>
+                    <p>Rename</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">7</span>
+                    <span class="key">Ctrl + K, D</span>
+                    <p>Format</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">8</span>
+                    <span class="key">Alt + ↑ ↓</span>
+                    <p>Di chuyển dòng</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">9</span>
+                    <span class="key">Ctrl + /</span>
+                    <p>Comment</p>
+                </div>
+                <div class="top-shortcut-card">
+                    <span class="rank">10</span>
+                    <span class="key">F5</span> / <span class="key">Ctrl + F5</span>
+                    <p>Chạy app</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" data-keywords="di chuyển tab đóng quay lại">
+            <div class="section-header">
+                <span class="section-icon">🔥</span>
+                <h2 class="section-title">NHÓM 1 – DI CHUYỂN & TAB</h2>
+            </div>
+            <div class="section-note">
+                👉 Rất hay dùng khi nhảy qua lại giữa Hub – Service – Controller
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + Tab</span></td>
+                        <td>Chuyển nhanh giữa các tab đang mở</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + Tab</span></td>
+                        <td>Quay lại tab trước</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + W</span></td>
+                        <td>Đóng tab hiện tại</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Alt + Left / Right</span></td>
+                        <td>Quay lại / tới vị trí con trỏ trước đó</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + -</span> / <span class="key">Ctrl + Shift + -</span></td>
+                        <td>Back / Forward vị trí code</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="tìm kiếm file symbol definition implementation references">
+            <div class="section-header">
+                <span class="section-icon">🔍</span>
+                <h2 class="section-title">NHÓM 2 – TÌM KIẾM FILE / SYMBOL</h2>
+            </div>
+            <div class="section-note">
+                👉 <span class="key">Ctrl + ,</span> là phím mạnh nhất, gần như thay thế Solution Explorer
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + ,</span></td>
+                        <td>🔥 Tìm file / class / method (Go To Anything)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + T</span></td>
+                        <td>Tìm type / method / member</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + F</span></td>
+                        <td>Tìm trong toàn bộ solution</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + F</span></td>
+                        <td>Tìm trong file hiện tại</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F12</span></td>
+                        <td>Go to Definition</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + F12</span></td>
+                        <td>Go to Implementation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Alt + F12</span></td>
+                        <td>Peek Definition (xem nhanh không mở tab)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Shift + F12</span></td>
+                        <td>Find All References</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="code refactor format rename intellisense quick actions">
+            <div class="section-header">
+                <span class="section-icon">🧠</span>
+                <h2 class="section-title">NHÓM 3 – CODE NHANH & REFACTOR</h2>
+            </div>
+            <div class="section-note">
+                👉 Dùng <span class="key">Ctrl + .</span> khi migrate .NET 4.7 → .NET 8 cực kỳ nhiều
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + .</span></td>
+                        <td>💡 Quick Actions / Fix / Refactor</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Space</span></td>
+                        <td>IntelliSense</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + K, Ctrl + D</span></td>
+                        <td>Format toàn bộ file</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + K, Ctrl + F</span></td>
+                        <td>Format đoạn code</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + R, Ctrl + R</span></td>
+                        <td>Rename symbol</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Alt + Enter</span></td>
+                        <td>Gợi ý fix nhanh (tùy ngữ cảnh)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="chỉnh sửa cắt copy paste xóa di chuyển duplicate">
+            <div class="section-header">
+                <span class="section-icon">✂️</span>
+                <h2 class="section-title">NHÓM 4 – CHỈNH SỬA CODE SIÊU NHANH</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + X</span></td>
+                        <td>Cắt dòng (không cần bôi đen)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + C</span></td>
+                        <td>Copy dòng</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + V</span></td>
+                        <td>Paste</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + L</span></td>
+                        <td>Xóa cả dòng</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Alt + Up / Down</span></td>
+                        <td>Di chuyển dòng lên / xuống</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + V</span></td>
+                        <td>Paste từ clipboard history</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + D</span></td>
+                        <td>Duplicate dòng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="multi cursor nhiều con trỏ select matching">
+            <div class="section-header">
+                <span class="section-icon">🧩</span>
+                <h2 class="section-title">NHÓM 5 – MULTI CURSOR</h2>
+            </div>
+            <div class="section-note">
+                JS / HTML / C# rất mạnh
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Alt + Click</span></td>
+                        <td>Đặt nhiều con trỏ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Alt + Down / Up</span></td>
+                        <td>Multi cursor theo dòng</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + Alt + J</span></td>
+                        <td>Select all matching text</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="solution file explorer new save">
+            <div class="section-header">
+                <span class="section-icon">📂</span>
+                <h2 class="section-title">NHÓM 6 – SOLUTION / FILE</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + Alt + L</span></td>
+                        <td>Focus vào Solution Explorer</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Enter</span></td>
+                        <td>Mở file</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + N</span></td>
+                        <td>New file</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + A</span></td>
+                        <td>Add new item</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + S</span></td>
+                        <td>Save all</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="debug breakpoint step run">
+            <div class="section-header">
+                <span class="section-icon">🐞</span>
+                <h2 class="section-title">NHÓM 7 – DEBUG</h2>
+            </div>
+            <div class="section-note">
+                ASP.NET / API / SignalR
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">F5</span></td>
+                        <td>Start Debug</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + F5</span></td>
+                        <td>Run không debug</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F9</span></td>
+                        <td>Toggle breakpoint</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F10</span></td>
+                        <td>Step over</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F11</span></td>
+                        <td>Step into</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Shift + F11</span></td>
+                        <td>Step out</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" data-keywords="web javascript css comment jump">
+            <div class="section-header">
+                <span class="section-icon">🚀</span>
+                <h2 class="section-title">NHÓM 8 – RIÊNG CHO WEB / JS / CSS</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phím</th>
+                        <th>Tác dụng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl + /</span></td>
+                        <td>Comment / Uncomment</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + /</span></td>
+                        <td>Comment block</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + Shift + ] / [</span></td>
+                        <td>Jump giữa cặp {}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + K, Ctrl + C</span></td>
+                        <td>Comment</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl + K, Ctrl + U</span></td>
+                        <td>Uncomment</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tips-box">
+            <h3>💡 Gợi ý thêm (rất đáng làm)</h3>
+            <ul>
+                <li>Vào <strong>Tools → Options → Environment → Keyboard</strong></li>
+                <li>Search <strong>GoToAll</strong></li>
+                <li>Gán thêm phím quen tay (ví dụ <span class="key" style="background: white; color: #f5576c;">Ctrl + P</span>)</li>
+                <li>Có thể đề xuất keymap tối ưu riêng cho ASP.NET / JS</li>
+                <li>Hoặc setup phím giống VS Code để chuyển đổi mượt hơn</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const sections = document.querySelectorAll('.section');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+
+            sections.forEach(section => {
+                const keywords = section.getAttribute('data-keywords') || '';
+                const text = section.textContent.toLowerCase();
+                const shouldShow = text.includes(searchTerm) || keywords.includes(searchTerm);
+
+                if (shouldShow) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+
+            if (searchTerm === '') {
+                sections.forEach(section => section.classList.remove('hidden'));
+            }
+        });
+    </script>
+</body>
+</html>
